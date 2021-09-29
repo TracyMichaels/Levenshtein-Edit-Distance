@@ -1,35 +1,8 @@
 import numpy as np
-#from IPython.display import display
-
 
 # # Tracy Michaels
 # ## CSC 4740 Data Mining - Assignment 2
-# ***
-# ### Implementing an algorithm for computing edit distance
-# ***
-# 
-# __Defining Edit Distance:__
-# > Edit distance is a way of quantifying how dissimilar two strings are to one another by counting the minimum number of operations required to transfor one string into the other  
-# 
-# __Applications of Edit Distance:__ 
-# > - Natual Language Processing (Spell check, speach recognition)
-# > - Computational Biology (DNA analysis)  
-# 
-# __Levenshtein Distance:__
-# > - For this assignment I will focus on Levenshtein distance, which is one type of edit distance   
-# > - This will calculate the minimum number of single-character edits (insertions, deletions, substitutions) required to transform one string into the other
-#   
-# > 3 operations for altering a string (each with a cost of 1 to perform):  
-# > - insert  
-# > - delete  
-# > - replace  
-# 
-# 
-# > last index in array will indicate the least number of operations to edit the strings to match
-# 
-# 
 
-# ***
 # ### Algorithm:
 
 def LevDis(s1: str, s2: str) -> int:
