@@ -1,11 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
-from IPython.display import display
+#from IPython.display import display
 
 
 # # Tracy Michaels
@@ -38,9 +32,6 @@ from IPython.display import display
 # ***
 # ### Algorithm:
 
-# In[2]:
-
-
 def LevDis(s1: str, s2: str) -> int:
     # construct array of size len(s1) by len(s2)
     # fill row 0 and col 0 with incremental numbers from 0 to length of strings + 1 respectively
@@ -69,18 +60,16 @@ def LevDis(s1: str, s2: str) -> int:
                 lev_arr[i + 1, j + 1] = min(lev_arr[i+1, j], lev_arr[i, j+1], lev_arr[i, j]) + 1
     
     # displays array (might not work outside of jupyter as it depends on IPython.display)
-    display(lev_arr)  
+    #display(lev_arr)
+    # use this one for outside notebook
+    print(np.matrix(lev_arr))
+
     # return min edit distance
     return lev_arr[-1, -1]
 
 
 # ***
 # ## Example 1:
-# > sString1 = "kitten"  
-# > sString2 = "sitting"
-
-# In[3]:
-
 
 s1_1 = "kitten"  
 s2_1 = "sitting"
@@ -92,12 +81,6 @@ print(f'Minimum edit distance between \'{s1_1}\' and \'{s2_1}\' is {res_ex1}' )
 
 # ***
 # ## Example 2:
-# > sString1 = "GAMBOL"  
-# > sString2 = "GUMBO"
-
-# In[4]:
-
-
 s1_2 = "GAMBOL"  
 s2_2 = "GUMBO"
 
@@ -105,8 +88,3 @@ res_ex2 = LevDis(s1_2, s2_2)
 
 print(f'Minimum edit distance between \'{s1_2}\' and \'{s2_2}\' is {res_ex2}' )
 
-
-# ***
-# ### Observations:
-# 
-# One observation I found interesting was the relationship between the target index and those indicies surrounding it, and how that relationship played a large role in the algorithm itself.  The output makes sense as in each step the algorithm is selecting the minimum value from the select adjacent indicies culminiating in the last one being the one that would represent the least amount of steps required to transform one into the others.
