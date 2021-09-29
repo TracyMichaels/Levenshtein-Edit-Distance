@@ -1,4 +1,5 @@
 import numpy as np
+# from IPython.display import display
 
 # # Tracy Michaels
 # ## CSC 4740 Data Mining - Assignment 2
@@ -36,7 +37,8 @@ def LevDis(s1: str, s2: str) -> int:
             # print(np.matrix(lev_arr))
     
     # displays array (might not work outside of jupyter as it depends on IPython.display)
-    #  display(lev_arr)  
+    # display(lev_arr)  
+
     # just use this one so it works outside notebook
     print(np.matrix(lev_arr))
     
