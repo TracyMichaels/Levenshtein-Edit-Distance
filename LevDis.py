@@ -31,12 +31,15 @@ def LevDis(s1: str, s2: str) -> int:
                 # increment lowest value from 'backwards-adjacent' indecies 
                 # (i.e. [i-1][j-1], [i-1][j], or [i][j-1]) then place into target index
                 lev_arr[i + 1, j + 1] = min(lev_arr[i+1, j], lev_arr[i, j+1], lev_arr[i, j]) + 1
+            # prints each step
+            # print(f'target = [{j+1}][{i+1}]')
+            # print(np.matrix(lev_arr))
     
     # displays array (might not work outside of jupyter as it depends on IPython.display)
-    #display(lev_arr)
-    # use this one for outside notebook
+    #  display(lev_arr)  
+    # just use this one so it works outside notebook
     print(np.matrix(lev_arr))
-
+    
     # return min edit distance
     return lev_arr[-1, -1]
 
